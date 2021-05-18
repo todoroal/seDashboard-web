@@ -3,7 +3,7 @@ Group project WebTech - seDashboard
 Team: Dominic, Thomas, Thomas 
 
 
-# Please do Not
+# Please do not...
 ...push changes you do not understand and could cause harm (especially if you installed a plugin or made changes to the package.json)
 
 # Install instructions

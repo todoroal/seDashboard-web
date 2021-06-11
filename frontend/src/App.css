@@ -5,8 +5,8 @@
 NOTE colors need to be changed 
 */
 :root {
-  --primary-color: #ff5722;
-  --dark-color: #333333;
+  --primary-color: #ed800d;
+  --dark-color: #282828;
   --light-color: #f4f4f4;
   --danger-color: #dc3545;
   --success-color: #28a745;
@@ -416,12 +416,12 @@ table th {
 
 /* Color/shape of burger icon bars */
 .bm-burger-bars {
-  background: #373a47;
+  background: var(--primary-color);
 }
 
 /* Color/shape of burger icon bars on hover*/
 .bm-burger-bars-hover {
-  background: #a90000;
+  background:var(--primary-color);
 }
 
 /* Position and sizing of clickable cross button */

@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import {Link} from 'react-router-dom'
 import { slide as Menu } from 'react-burger-menu'
 import AuthContext from '../../context/auth/authContext'
+import {ReactComponent as MainLogo} from "../../res/img/se_logo.svg";
 
  const BurgerMenu = ({title, icon}) => {
     const authContext = useContext(AuthContext);
@@ -60,7 +61,7 @@ import AuthContext from '../../context/auth/authContext'
     return (
    
         <Menu>
- 
+            <MainLogo></MainLogo>
             <ul>
                 {isAuthenticated ? authLinks : unauthLinks}
             </ul>

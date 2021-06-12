@@ -12,7 +12,7 @@ const {name,weather,wind,main} = dataFetched[0];
  return (
     <Fragment>
         <div className="container-dash">
-        <h2>Weahter Forecast</h2>
+        <h2>Weahter Today</h2>
         <p className="weahter-text-minmax">{name}, Min {main.temp_min}° / Max {main.temp_max}°</p> 
         <div className="image-wrapper">        
             <img className="weahter-icon" src={`http://openweathermap.org/img/wn/${weather[0].icon}@2x.png`} align="left" alt={`${name}`} width="100px" height="100px"/>

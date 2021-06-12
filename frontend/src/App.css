@@ -43,6 +43,18 @@ img {
   width: 100%;
 }
 
+.container-aboutus{
+  display: flex;
+}
+.item-aboutus{
+  flex-grow: 1;
+  height: 100px;
+}
+.item-aboutus{
+  margin-left: 2%;
+}
+
+
 /*Weahter City Text*/
 .weahter-text-minmax{
   text-align: center;

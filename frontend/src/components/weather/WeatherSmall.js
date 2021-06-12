@@ -56,14 +56,10 @@ const {name,weather,wind,main} = tmpData
     <Fragment>
         <div className="container-dash">
         <h2>Weahter Forecast</h2>
+        <p className="weahter-text-minmax">{name}, Min {main.temp_min}° / Max {main.temp_max}°</p> 
         <img className="weahter-icon" src={`http://openweathermap.org/img/wn/${weather[0].icon}@2x.png`} align="left" alt={`${name}`} width="100px" height="100px"/>
-        <p className="weahter-city">{name}, Min {main.temp_min}° / Max {main.temp_max}°</p> 
-        <p>{main.temp}°</p>
-        <br></br>
-        <br></br>
-        <br></br>
-        <br></br>
-        <ul>Details</ul>
+        <p className="weahter-text-icon">{main.temp}°</p>
+        <ul className="weahter-ul">Details</ul>
           <li>Feels Like {main.feels_like}°</li>
           <li>Wind {wind.speed} m/s</li>
           <li>Humidity {main.humidity}%</li>

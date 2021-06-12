@@ -44,8 +44,22 @@ img {
 }
 
 /*Weahter City Text*/
-.weahter-city{
-  float: left;
+.weahter-text-minmax{
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  font-weight: bold;
+
+}
+.weahter-text-icon{
+  text-align: center;
+  padding-right: 4rem;
+  padding-top: 1rem;
+  font-family: 'Roboto', sans-serif;
+  font-size: 3rem;
+  line-height: 1.6;
+  font-weight: bold;
 }
 
 /*Weahter Icon*/
@@ -54,7 +68,17 @@ img {
   width: 28%;
 }
 
-/*Wheater*/
+/*Weahter List*/
+.weahter-ul{
+  text-align: left;
+  padding-right: 15rem;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  font-weight: bold;
+}
+
+/*Weahter*/
 .container-dash{
   padding: 1vw;
   background-color: yellow;

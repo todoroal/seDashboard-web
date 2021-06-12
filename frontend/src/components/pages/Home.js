@@ -5,7 +5,6 @@ import WeatherSmall from '../weather/WeatherSmall';
 
 import AuthContext from '../../context/auth/authContext';
 //import DashboardContext from '../../context/dashboard/dashboardContext';
-import { compareSync } from 'bcryptjs';
 
  const Home = () => {
     const authContext = useContext(AuthContext);

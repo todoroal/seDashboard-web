@@ -414,6 +414,13 @@ table th {
   background: var(--light-color);
 }
 
+.switch-theme {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  margin: 1%;
+
+}
 
 /* Navbar */
 .navbar {

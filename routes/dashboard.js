@@ -4,6 +4,9 @@ const User = require('../models/User');
 const jwt = require('jsonwebtoken');
 const auth = require('../middleware/auth');
 const Dashboard = require('../models/Dashboard');
+const axios = require('axios');
+const fetch = require('node-fetch');
+
 
 
 // @route       GET api/dashboard
@@ -40,7 +43,7 @@ router.post('/',
        res.json(dashboard)
    } catch (err) {
        console.error(err.message);
-       res.status(500).send('Server Erroooooooorr');      
+       res.status(500).send('Server Error');      
        
    }
 });
@@ -69,9 +72,14 @@ router.put('/:id',auth, async (req,res) => {
 
 
 
+router.get('/fda'), async (res) => {
+  try{
+   
+  }catch(e){
+    console.error(e)
+  }
 
-
-
+}
 
 
 module.exports = router;

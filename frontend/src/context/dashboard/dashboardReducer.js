@@ -5,7 +5,7 @@ import {
 } from '../types'
 
 export default (state, action) =>{
-    switch(action.type){
+/*     switch(action.type){
 
         case LOAD_DASH:
             return{
@@ -32,6 +32,6 @@ export default (state, action) =>{
             return state;
 
     }
-
+ */
 
 }

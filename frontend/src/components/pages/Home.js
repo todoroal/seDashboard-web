@@ -3,32 +3,34 @@ import { Responsive as ResponsiveGridLayout } from 'react-grid-layout';
 import GridLayout from 'react-grid-layout';
 
 import AuthContext from '../../context/auth/authContext';
-import DashboardContext from '../../context/dashboard/dashboardContext';
+//import DashboardContext from '../../context/dashboard/dashboardContext';
 import { compareSync } from 'bcryptjs';
 
  const Home = () => {
     const authContext = useContext(AuthContext);
-    const dashboardContext = useContext(DashboardContext);
+    //const dashboardContext = useContext(DashboardContext);
 
     const {isAuthenticated, user} = authContext
-    const {layout, updateDash,loadDash, id} = dashboardContext;
+    //const { updateDash,loadDash, id} = dashboardContext;
 
 
     useEffect(()=>{
       if(localStorage.token){
           authContext.loadUser();
-          loadDash();
+          //loadDash();
       }
 
 
       //eslint-disable-next-line
   }, []);
 
+
+  const layout = [{i: 'weatherLarge', x: 0, y: 0, w: 8, h: 2, minW: 8},     {i: 'weaterSmall', x: 8, y: 0, w: 4, h: 2, minW: 4, maxW: 4}]
     const onLayoutChange = (newLay) =>{
-          loadDash();
+         // loadDash();
       if(user != null){
-          updateDash(id, newLay);
-          loadDash();
+          //updateDash(id, newLay);
+          //loadDash();
       }
     }
 

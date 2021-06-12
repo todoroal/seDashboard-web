@@ -13,7 +13,7 @@ import {
 
 const DashboardState = props =>{
     const initialState ={
-        layout:  [{i: 'weatherLarge', x: 0, y: 0, w: 8, h: 2, minW: 8},     {i: 'weaterSmall', x: 8, y: 0, w: 4, h: 2, minW: 4, maxW: 4},                  
+      layout:  [{i: 'weatherLarge', x: 0, y: 0, w: 8, h: 2, minW: 8},     {i: 'weaterSmall', x: 8, y: 0, w: 4, h: 2, minW: 4, maxW: 4},                  
         ],
         id: null,
     };
@@ -90,7 +90,7 @@ const DashboardState = props =>{
             {props.children}
 
         </DashboardContext.Provider>
-    )
+    ) 
 
 }
 

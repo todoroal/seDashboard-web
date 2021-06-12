@@ -4,13 +4,10 @@ const User = require('../models/User');
 const jwt = require('jsonwebtoken');
 const auth = require('../middleware/auth');
 const Dashboard = require('../models/Dashboard');
-<<<<<<< HEAD
 const axios = require('axios');
 const fetch = require('node-fetch');
 
-=======
 const backend = require('../backend/index');
->>>>>>> 1344c42f2ff478fa5790f7d436b905b66d89ade0
 
 
 // @route       GET api/dashboard

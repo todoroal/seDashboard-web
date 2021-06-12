@@ -54,18 +54,23 @@ img {
 }
 .weahter-text-icon{
   text-align: center;
-  padding-right: 4rem;
-  padding-top: 1rem;
+/*   padding-right: 4rem;
+  padding-top: 1rem; */
   font-family: 'Roboto', sans-serif;
   font-size: 3rem;
   line-height: 1.6;
   font-weight: bold;
 }
 
+.image-wrapper {
+  display: flex;
+  align-items: center;
+}
+
 /*Weahter Icon*/
 .weahter-icon{
-  float: left;
-  width: 28%;
+  width: 50%;
+  height: 50%;
 }
 
 /*Weahter List*/
@@ -81,7 +86,9 @@ img {
 /*Weahter*/
 .container-dash{
   padding: 1vw;
-  background-color: yellow;
+  /* background-color: yellow; */
+  min-height: 100%;
+  min-width: 100%;
   
 }
 

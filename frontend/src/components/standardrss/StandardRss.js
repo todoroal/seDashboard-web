@@ -38,10 +38,12 @@ console.log(items.title, 'title')
         <h2>derStandard Newsroom</h2>
         <div className="image-wrapper">
         {items.map(item =>{
+          return(
             <div>
             <a href={`${item.link}`}>{item.title}</a>  
             <img src={`${item.thumbnail}`}  alt="derStandard" width="100%" height="100%"/>
             </div>
+            )
             console.log(item.title, 'ITEM')
         })}          
         </div>       

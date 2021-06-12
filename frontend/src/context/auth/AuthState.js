@@ -1,8 +1,9 @@
-import React, {useReducer } from 'react';
+import React, {useReducer, useContext } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import axios from 'axios';
 import AuthContext from './authContext';
 import setAuthToken from '../../utils/setAuthToken';
+
 import authReducer from './authReducer';
 import {
     REGISTER_SUCCESS,
@@ -33,7 +34,6 @@ const AuthState = props =>{
        console.log(localStorage, 'local storage on load user')
      if(localStorage.token){
          setAuthToken(localStorage.token);
-         console.log(localStorage, 'in if?')
      }
      try{
         const res = await axios.get('http://localhost:5000/api/auth');

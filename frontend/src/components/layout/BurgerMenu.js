@@ -61,7 +61,7 @@ import {ReactComponent as MainLogo} from "../../res/img/se_logo.svg";
     return (
    
         <Menu>
-            <MainLogo></MainLogo>
+            
             <ul>
                 {isAuthenticated ? authLinks : unauthLinks}
             </ul>

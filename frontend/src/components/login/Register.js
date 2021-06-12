@@ -1,6 +1,8 @@
 import React, {useState, useContext, useEffect} from 'react';
 import AlertContext from '../../context/alert/alertContext';
 import AuthContext from '../../context/auth/authContext';
+import DashboardContext from '../../context/dashboard/dashboardContext';
+
 
 
 const Register = (props) =>{
@@ -11,10 +13,17 @@ const Register = (props) =>{
     const authContext = useContext(AuthContext)
     const {register, error, removeErrors, isAuthenticated } = authContext;
 
+    const {layout, saveDash} = useContext(DashboardContext)
+
+
 
     useEffect(()=>{
         if(isAuthenticated){
             props.history.push('/')
+
+            /* saveDash({
+                layout
+            }) */
         }
         if(error ==='User already exists'){
             setAlert(error, 'danger');
@@ -41,7 +50,9 @@ const Register = (props) =>{
                name,
                email,
                password
-           })
+           });
+
+
         }
        
     }

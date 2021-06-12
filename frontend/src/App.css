@@ -43,6 +43,24 @@ img {
   width: 100%;
 }
 
+/*Weahter City Text*/
+.weahter-city{
+  float: left;
+}
+
+/*Weahter Icon*/
+.weahter-icon{
+  float: left;
+  width: 28%;
+}
+
+/*Wheater*/
+.container-dash{
+  padding: 1vw;
+  background-color: yellow;
+  
+}
+
 /* Utilities */
 .container {
   max-width: 1200px;

@@ -4,9 +4,13 @@ const User = require('../models/User');
 const jwt = require('jsonwebtoken');
 const auth = require('../middleware/auth');
 const Dashboard = require('../models/Dashboard');
+<<<<<<< HEAD
 const axios = require('axios');
 const fetch = require('node-fetch');
 
+=======
+const backend = require('../backend/index');
+>>>>>>> 1344c42f2ff478fa5790f7d436b905b66d89ade0
 
 
 // @route       GET api/dashboard
@@ -55,9 +59,8 @@ router.post('/',
 // @access      Private
 router.put('/:id',auth, async (req,res) => {
     try {
-
-        newLay = req.body
-        updated = await Dashboard.findByIdAndUpdate(
+        let newLay = req.body
+        let updated = await Dashboard.findByIdAndUpdate(
           req.params.id,
           {$set:{ layout: newLay}},
           {new: true}
@@ -70,7 +73,14 @@ router.put('/:id',auth, async (req,res) => {
       }
 });
 
-
+router.get('/temp', async (req,res) => {
+  try{
+    const weather = await axios.get('api.openweathermap.org/data/2.5/forecast?units=metric&q=Vienna&APPID=b1f2d01d253273e36e3005b89b2e84db');
+    res.json(weather);
+  } catch(err){
+    console.error(err.msg);
+  }
+});
 
 router.get('/fda'), async (res) => {
   try{

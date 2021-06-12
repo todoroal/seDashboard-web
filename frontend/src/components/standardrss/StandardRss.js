@@ -12,9 +12,9 @@ const StandardRss = () => {
         "thumbnail": "https://images.derstandard.at/img/2021/06/11/APA-schlagerr.jpg?w=150&s=cfd51598",
       },
       {
-        "title": "Test",
-        "link": "https://www.derstandard.at/story/2000127335201/anzeigen-ermittlungen-chats-fuer-die-oevp-wird-die-luft-duenn?ref=rss",
-        "thumbnail": "https://images.derstandard.at/img/2021/06/11/APA-schlagerr.jpg?w=150&s=cfd51598",
+        "title": "Kurz und FPÖ gegen Erleichterung bei Staatsbürgerschaft",
+        "link": "https://www.derstandard.at/story/2000127347245/kurz-gegen-staatsbuergerschaft-kogler-fuer-erleichterungen?ref=rss",
+        "thumbnail": "https://images.derstandard.at/img/2021/06/12/92BD53E4-4241-4A82-A798-A924C764AD99.jpeg?w=150&s=383fdd31",
       }
      ]
     }

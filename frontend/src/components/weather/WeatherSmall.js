@@ -18,8 +18,6 @@ const {name,weather,wind,main} = dataFetched[0];
             <img className="weahter-icon" src={`http://openweathermap.org/img/wn/${weather[0].icon}@2x.png`} align="left" alt={`${name}`} width="100px" height="100px"/>
             <p className="weahter-text-icon">{main.temp}°</p> 
         </div>
-
-
         <ul className="weahter-ul">Details</ul>
           <li>Feels Like {main.feels_like}°</li>
           <li>Wind {wind.speed} m/s</li>

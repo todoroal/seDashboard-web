@@ -37,16 +37,17 @@ console.log(items.title, 'title')
       <div className="container-dash">
         <h2>derStandard Newsroom</h2>
         <div className="image-wrapper">
+        <ul className="ul-newsroom-scroolbar">
         {items.map(item =>{
           return(
-            <div>
+            <li className="li-newsroom-text">
             <a href={`${item.link}`}>{item.title}</a>  
-            <img src={`${item.thumbnail}`}  alt="derStandard" width="100%" height="100%"/>
-            </div>
+            <img className="li-newsroom-img" src={`${item.thumbnail}`}  alt="derStandard" width="100%" height="100%"/>
+            </li>
             )
-            console.log(item.title, 'ITEM')
-        })}          
-        </div>       
+        })}   
+        </ul>         
+        </div>    
       </div>
     </Fragment>
 

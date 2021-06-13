@@ -4,8 +4,10 @@ const User = require('../models/User');
 const jwt = require('jsonwebtoken');
 const auth = require('../middleware/auth');
 const Dashboard = require('../models/Dashboard');
-var {getTempDataForecast} = require('../backend/index');
 const axios = require('axios');
+const fetch = require('node-fetch');
+
+const backend = require('../backend/index');
 
 
 // @route       GET api/dashboard
@@ -42,7 +44,7 @@ router.post('/',
        res.json(dashboard)
    } catch (err) {
        console.error(err.message);
-       res.status(500).send('Server Erroooooooorr');      
+       res.status(500).send('Server Error');      
        
    }
 });

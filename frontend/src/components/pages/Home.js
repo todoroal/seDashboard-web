@@ -1,16 +1,18 @@
 import React, { useContext, useEffect, Fragment } from 'react'
-import { Responsive as ResponsiveGridLayout } from 'react-grid-layout';
+
 import GridLayout from 'react-grid-layout';
 import WeatherSmall from '../weather/WeatherSmall';
+import StandardRss from '../standardrss/StandardRss';
 
 import AuthContext from '../../context/auth/authContext';
+//import NoteContext from '../../context/notes/noteContext';
 //import DashboardContext from '../../context/dashboard/dashboardContext';
-import { compareSync } from 'bcryptjs';
+
 
  const Home = () => {
     const authContext = useContext(AuthContext);
     //const dashboardContext = useContext(DashboardContext);
-
+    //const noteContext = useContext(NoteContext);
     const {isAuthenticated, user} = authContext
     //const { updateDash,loadDash, id} = dashboardContext;
 
@@ -18,6 +20,7 @@ import { compareSync } from 'bcryptjs';
     useEffect(()=>{
       if(localStorage.token){
           authContext.loadUser();
+          //noteContext.getNotes();
           //loadDash();
       }
 
@@ -26,7 +29,10 @@ import { compareSync } from 'bcryptjs';
   }, []);
 
 
-  const layout = [{i: 'weatherLarge', x: 0, y: 0, w: 8, h: 2, minW: 8},     {i: 'weatherSmall', x: 8, y: 0, w: 4, h: 2, minW: 4, maxW: 4}]
+  const layout = [{i: 'weatherLarge', x: 0, y: 0, w: 8, h: 2, minW: 8}, 
+                  {i: 'weatherSmall', x: 8, y: 0, w: 4, h: 2, minW: 4, maxW: 4},
+                  {i: 'standardRss', x: 8, y: 0, w: 4, h: 2, minW: 4, maxW: 4}
+                ]
     const onLayoutChange = (newLay) =>{
          // loadDash();
       if(user != null){
@@ -46,6 +52,9 @@ import { compareSync } from 'bcryptjs';
         </div>
         <div key="weatherSmall">
           <WeatherSmall></WeatherSmall>
+        </div>
+        <div key="standardRss">
+          <StandardRss></StandardRss>
         </div>
       </GridLayout>
     </Fragment>

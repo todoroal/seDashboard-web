@@ -1,21 +1,15 @@
 const axios = require('axios');
 const mongoose = require('mongoose')
+const Quote = require('../models/Quote');
+
 var csv = require('csvtojson');
 
 var Schema = mongoose.Schema 
 
-var quoteSchema = new Schema ({ 
-    quote : String, 
-    movie : String, 
-    character : String
-}, {collection : 'quotes'})
 
     const getTempDataForecast = async () => {
         try {
             const weatherForecast = await axios.get('https://api.openweathermap.org/data/2.5/forecast?units=metric&q=Vienna&APPID=5dba23245d2e80d7bb7a49cc82c47cda');
-            //temperature
-            //icons
-            //city
             return(weatherForecast.data);
         } catch (err) {
             console.error(err);
@@ -30,8 +24,6 @@ var quoteSchema = new Schema ({
             console.error(err);
         }
     };
-
-
 
     const getC19Data = async () => {
         try {
@@ -54,6 +46,9 @@ var quoteSchema = new Schema ({
     const getStandardFeed = async () => {
         try {
             const standardRSSFeed = await axios.get('https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fwww.derstandard.at%2Frss')
+            //link
+            //headline
+            //thumbnail
             return(standardRSSFeed.data);
         } catch (err) {
             console.error(err);
@@ -62,46 +57,25 @@ var quoteSchema = new Schema ({
 
     const getArnieQuote = async () => {
         try {
-            const arnieQuote = await axios.get('DatabseRequest')
-            return(arnieQuote.data);
+            var randNumb = getRandomInt(100);
+            let quote = await Quote.findOne({ _id : randNumb });
+            console.log(quote);
+            return(quote);
         } catch (err) {
             console.error(err);
         }
     }
 
-    function csvToJSON(csvString) {
-    var json = [];
-    var csvArray = csvString.split("\n");
-
-    // Remove the column names from csvArray into csvColumns.
-    // Also replace single quote with double quote (JSON needs double).
-    var csvColumns = JSON
-            .parse("[" + csvArray.shift().replace(/'/g, '"') + "]");
-
-    csvArray.forEach(function(csvRowString) {
-
-        var csvRow = csvRowString.split(",");
-
-        // Here we work on a single row.
-        // Create an object with all of the csvColumns as keys.
-        var jsonRow = new Object();
-        for ( var colNum = 0; colNum < csvRow.length; colNum++) {
-            // Remove beginning and ending quotes since stringify will add them.
-            var colData = csvRow[colNum].replace(/^['"]|['"]$/g, "");
-            jsonRow[csvColumns[colNum]] = colData;
-        }
-        json.push(jsonRow);
-    });
-
-    return json;
-};
+    function getRandomInt(max){
+        return Math.floor(Math.random()*max);
+    }
 
     module.exports={
         getTempDataForecast,
         getTempCurrentData,
         getC19Data,
         getStandardFeed,
-        getArnieQuote
+        getArnieQuote,
     }
             //*************************************/
             //endpoint getCurrentWeather (OneCall)

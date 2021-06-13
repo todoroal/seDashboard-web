@@ -1,6 +1,6 @@
 const axios = require('axios');
 const mongoose = require('mongoose')
-const CSVToJSON = require('csvtojson');
+var csv = require('csvtojson');
 
 var Schema = mongoose.Schema 
 
@@ -31,22 +31,24 @@ var quoteSchema = new Schema ({
         }
     };
 
+
+
     const getC19Data = async () => {
         try {
             const response = await axios.get('https://info.gesundheitsministerium.gv.at/data/timeline-faelle-bundeslaender.csv',{ responseType: 'blob',}); 
-            const CSV = response.data
-            //const jsonData = csvToJSON(CSV)
-            return(CSV)
+            const CSVDATA = response.data
+
+            csv()
+            .fromString(CSVDATA)
+            .then((jsonObj)=>{
+                return jsonObj
+            })
+
+            const data = await csv().fromString(CSVDATA);
+            return data
         }catch (err) {
             console.error(err);
         }
-
-        /* try {
-            const coronaData = await axios.get('https://info.gesundheitsministerium.gv.at/data/timeline-faelle-bundeslaender.csv')
-            return(coronaData.data)
-        } catch (err) {
-            console.error(err);
-        } */
     }
 
     const getStandardFeed = async () => {

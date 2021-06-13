@@ -4,7 +4,8 @@ const User = require('../models/User');
 const jwt = require('jsonwebtoken');
 const auth = require('../middleware/auth');
 const Dashboard = require('../models/Dashboard');
-const backend = require('../backend/index');
+var {getTempDataForecast} = require('../backend/index');
+const axios = require('axios');
 
 
 // @route       GET api/dashboard
@@ -68,12 +69,11 @@ router.put('/:id',auth, async (req,res) => {
 });
 
 router.get('/temp', async (req,res) => {
-  try{
-    const weather = await axios.get('api.openweathermap.org/data/2.5/forecast?units=metric&q=Vienna&APPID=b1f2d01d253273e36e3005b89b2e84db');
-    res.json(weather);
-  } catch(err){
-    console.error(err.msg);
-  }
+        await getTempDataForecast()
+        .then(data => {res.json(data)})
+        .catch(function (error) {
+          console.log(error);
+       });
 });
 
 

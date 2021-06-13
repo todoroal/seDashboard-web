@@ -8,7 +8,7 @@ const Note = require('../models/Note');
 // @access    Private
 router.get('/', auth, async (req, res) => {
   try {
-    const notes = await Note.find({user: req.user.id});
+    const notes = await Note.find({user: req.user.id}).sort({date: -1});
     res.json(notes);
   } catch (err) {
     console.error(err.message);

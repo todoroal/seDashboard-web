@@ -8,17 +8,33 @@ import NoteContext from '../../context/notes/noteContext';
  const NotesForm = () => {
     const noteContext = useContext(NoteContext);
 
-    const {addNote, current} = noteContext
-    let noteText = '';
+    const {addNote, current,clearCurrent} = noteContext
 
-    const cc = event =>{
-        event.preventDefault();
-        noteText = event.target.value
+    useEffect(()=>{
+        setNote({
+            noteText: ''
+        })
+    },[noteContext, current])
+
+    const [note, setNote] = useState({
+        noteText :''
+    })
+
+    const {noteText} = note;
+
+    const onChange = e =>{
+        setNote({ ...note, [e.target.name]: e.target.value });
     }
     
     const onSubmit = event => {
         event.preventDefault();
         addNote(noteText);
+        clearAll()
+    }
+
+    const clearAll = ()=>{
+        clearCurrent();
+
     }
 
     return (
@@ -26,7 +42,7 @@ import NoteContext from '../../context/notes/noteContext';
     
        
         <form onSubmit={onSubmit}>
-                <textarea placeholder="*enter your note here...." rows="8" cols="50" name="note" onChange={cc} required></textarea>
+                <textarea placeholder="*enter your note here...." rows="8" cols="50" name="noteText" value={noteText} onChange={onChange} required></textarea>
                 <div>
                     <input type="submit" value="Add Note" name="note" className="btn btn-primary"></input>
                 </div>

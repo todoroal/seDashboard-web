@@ -1,5 +1,6 @@
 import {
     ADD_NOTE,
+    CLEAR_CURRENT,
     DELETE_NOTE,
     GET_NOTES,
   } from '../types';
@@ -23,6 +24,11 @@ import {
               notes: state.notes.filter(
                 note => note._id !== action.payload
               )
+            }
+          case CLEAR_CURRENT:
+            return{
+              ...state,
+              current: null
             }
       default:
         return state;

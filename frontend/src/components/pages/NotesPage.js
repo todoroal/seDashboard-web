@@ -18,7 +18,7 @@ import NotesForm from '../notes/NotesForm';
             <div>
                 <NotesForm></NotesForm>
             </div>
-            <div className='test-class'>
+            <div className='notes-page-wrapper'>
                 <Notes></Notes>
             </div>
         

@@ -9,7 +9,7 @@ var Schema = mongoose.Schema
 
     const getTempDataForecast = async () => {
         try {
-            const weatherForecast = await axios.get('https://api.openweathermap.org/data/2.5/forecast?units=metric&q=Vienna&APPID=5dba23245d2e80d7bb7a49cc82c47cda');
+            const weatherForecast = await axios.get('https://api.openweathermap.org/data/2.5/onecall?lat=48.2085&lon=16.3721&exclude=minutely,current,alerts&units=metric&appid=b1f2d01d253273e36e3005b89b2e84db');
             return(weatherForecast.data);
         } catch (err) {
             console.error(err);
@@ -18,7 +18,7 @@ var Schema = mongoose.Schema
 
     const getTempCurrentData = async () => {
         try {
-            const weatherCurrent = await axios.get('https://api.openweathermap.org/data/2.5/onecall?lat=48.2085&lon=16.3721&exclude=minutely,hourly,daily,alerts&units=metric&appid=b1f2d01d253273e36e3005b89b2e84db')
+            const weatherCurrent = await axios.get('https://api.openweathermap.org/data/2.5/onecall?lat=48.2085&lon=16.3721&exclude=minutely,hourly,alerts&units=metric&appid=b1f2d01d253273e36e3005b89b2e84db')
             return(weatherCurrent.data)
         } catch (err) {
             console.error(err);
@@ -46,9 +46,6 @@ var Schema = mongoose.Schema
     const getStandardFeed = async () => {
         try {
             const standardRSSFeed = await axios.get('https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fwww.derstandard.at%2Frss')
-            //link
-            //headline
-            //thumbnail
             return(standardRSSFeed.data);
         } catch (err) {
             console.error(err);

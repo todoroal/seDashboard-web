@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const ContactSchema = mongoose.Schema({
+const NotesSchema = mongoose.Schema({
   user: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'users'
@@ -11,4 +11,4 @@ const ContactSchema = mongoose.Schema({
   },
 });
 
-module.exports = mongoose.model('contact', ContactSchema);
+module.exports = mongoose.model('notes', NotesSchema);

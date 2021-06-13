@@ -19,13 +19,6 @@ const StandardRss = () => {
      ]
     }
 
-
-    
-
-    console.log(tmpData, 'tmp data')
-
-    
-
 const {items} = tmpData  
 
 

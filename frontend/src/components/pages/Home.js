@@ -1,17 +1,18 @@
 import React, { useContext, useEffect, Fragment } from 'react'
-import { Responsive as ResponsiveGridLayout } from 'react-grid-layout';
+
 import GridLayout from 'react-grid-layout';
 import WeatherSmall from '../weather/WeatherSmall';
 import StandardRss from '../standardrss/StandardRss';
 
 import AuthContext from '../../context/auth/authContext';
+//import NoteContext from '../../context/notes/noteContext';
 //import DashboardContext from '../../context/dashboard/dashboardContext';
 
 
  const Home = () => {
     const authContext = useContext(AuthContext);
     //const dashboardContext = useContext(DashboardContext);
-
+    //const noteContext = useContext(NoteContext);
     const {isAuthenticated, user} = authContext
     //const { updateDash,loadDash, id} = dashboardContext;
 
@@ -19,6 +20,7 @@ import AuthContext from '../../context/auth/authContext';
     useEffect(()=>{
       if(localStorage.token){
           authContext.loadUser();
+          //noteContext.getNotes();
           //loadDash();
       }
 

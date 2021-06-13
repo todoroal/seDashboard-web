@@ -43,6 +43,32 @@ img {
   width: 100%;
 }
 
+.note-input-wrapper{
+  min-width: 50%;
+}
+
+.test-class{
+  min-width: 50%;
+}
+
+.note-wrapper{
+  display: flex;
+  height: auto;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid var(--dark-color);
+  padding: 1%;
+  margin:1%
+  
+}
+
+.note-text{
+  max-width: 50%;
+  overflow: hidden;
+}
+.note-remove{
+  float: right;
+}
 /*Weahter City Text*/
 .weahter-text-minmax{
   text-align: center;

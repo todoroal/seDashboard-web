@@ -71,13 +71,16 @@ img {
 }
 .container-aboutus{
   display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .item-aboutus{
-  flex-grow: 1;
-  height: 100px;
-}
-.item-aboutus{
-  margin-left: 2%;
+  display: flex;
+  align-items: center;
+  height: 80%;
+  height: 12rem;
+  margin-bottom: 10px;
+  width: 40%;
 }
 
 

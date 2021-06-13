@@ -38,7 +38,7 @@ import NoteContext from '../../context/notes/noteContext';
     }
 
     return (
-        <div className="m form-group note-input-wrapper">
+        <div className="">
     
        
         <form onSubmit={onSubmit}>

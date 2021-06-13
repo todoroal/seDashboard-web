@@ -43,6 +43,7 @@ img {
   width: 100%;
 }
 
+<<<<<<< HEAD
 .note-input-wrapper{
   min-width: 50%;
 }
@@ -69,6 +70,20 @@ img {
 .note-remove{
   float: right;
 }
+=======
+.container-aboutus{
+  display: flex;
+}
+.item-aboutus{
+  flex-grow: 1;
+  height: 100px;
+}
+.item-aboutus{
+  margin-left: 2%;
+}
+
+
+>>>>>>> 203687a3fe4d7637cc3282ee67a7177f0faf24c9
 /*Weahter City Text*/
 .weahter-text-minmax{
   text-align: center;
@@ -91,8 +106,27 @@ img {
 .image-wrapper {
   display: flex;
   align-items: center;
+  height: 80%;
 }
 
+.ul-newsroom-scroolbar{
+  overflow:hidden;
+  overflow-y: scroll;
+}
+
+.li-newsroom-text{
+  padding-top: -5rem;
+  padding-bottom: -5rem;
+  text-align: center;
+  list-style-type: none;
+}
+.li-newsroom-img{
+  padding-bottom: -5rem;
+  padding-top: -5rem;
+  display: flex;
+  align-content: center;
+  transform: scale(0.7);
+}
 /*Weahter Icon*/
 .weahter-icon{
   width: 50%;

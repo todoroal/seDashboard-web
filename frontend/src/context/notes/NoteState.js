@@ -2,7 +2,7 @@ import React, { useContext, useEffect, Fragment,useReducer } from 'react'
 import axios from 'axios';
 import NoteContext from './noteContext';
 import NoteReducer from './noteReducer';
-import { ADD_NOTE, GET_NOTES, DELETE_NOTE} from '../types'
+import { ADD_NOTE, GET_NOTES, DELETE_NOTE, CLEAR_CURRENT} from '../types'
 
 
 const NoteState = props =>{
@@ -61,6 +61,10 @@ const NoteState = props =>{
            }
     }
 
+    const clearCurrent = () =>{
+        dispatch({type: CLEAR_CURRENT})
+    }
+
 
     return(
         <NoteContext.Provider value={{
@@ -68,7 +72,8 @@ const NoteState = props =>{
             current: state.current,
             getNotes,
             addNote,
-            deleteNote
+            deleteNote,
+            clearCurrent
            }}>
             {props.children}
 

@@ -43,7 +43,6 @@ img {
   width: 100%;
 }
 
-<<<<<<< HEAD
 .note-input-wrapper{
   min-width: 50%;
 }
@@ -70,7 +69,6 @@ img {
 .note-remove{
   float: right;
 }
-=======
 .container-aboutus{
   display: flex;
 }
@@ -83,7 +81,6 @@ img {
 }
 
 
->>>>>>> 203687a3fe4d7637cc3282ee67a7177f0faf24c9
 /*Weahter City Text*/
 .weahter-text-minmax{
   text-align: center;

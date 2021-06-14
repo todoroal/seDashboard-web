@@ -80,11 +80,12 @@ img {
 }
 .container-aboutus{
   display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
+  flex-direction: column;
   justify-content: space-evenly;
-  align-items: baseline;
-  height: 50vmax;
+  align-items: stretch;
+  height: 33vmax;
+  align-content: flex-end;
+  flex-wrap: wrap;
 }
 
 .item-aboutus{
@@ -101,6 +102,11 @@ img {
   height: 12rem;
   margin-bottom: 10px;
   width: 40%;
+}
+
+.item-aboutus-text{
+  padding-top: 6%;
+  padding-left: 5%;
 }
 
 li.\.item-aboutus-li-bold{

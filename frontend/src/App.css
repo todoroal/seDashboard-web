@@ -117,8 +117,8 @@ li.item-aboutus-li-italic{
   font-style: italic;
 }
 
-/*Weahter City Text*/
-.weahter-text-minmax{
+/*weather City Text*/
+.weather-text-minmax{
   text-align: center;
   font-family: 'Roboto', sans-serif;
   font-size: 1rem;
@@ -126,7 +126,7 @@ li.item-aboutus-li-italic{
   font-weight: bold;
 
 }
-.weahter-text-icon{
+.weather-text-icon{
   text-align: center;
 /*   padding-right: 4rem;
   padding-top: 1rem; */
@@ -160,14 +160,14 @@ li.item-aboutus-li-italic{
   width: 60%;
   margin-left:4%;
 }
-/*Weahter Icon*/
-.weahter-icon{
+/*weather Icon*/
+.weather-icon{
   width: 35%;
   height: 35%;
 }
 
-/*Weahter List*/
-.weahter-ul{
+/*weather List*/
+.weather-ul{
   text-align: left;
   padding-right: 15rem;
   font-family: 'Roboto', sans-serif;
@@ -176,7 +176,7 @@ li.item-aboutus-li-italic{
   font-weight: bold;
 }
 
-/*Weahter*/
+/*weather*/
 .container-dash{
   padding: 1vw;
   /* background-color: yellow; */

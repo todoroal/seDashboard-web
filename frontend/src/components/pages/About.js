@@ -3,14 +3,16 @@ import React from 'react'
  const About = () => {
     return (
         <div className="container-aboutus">
-            <div class="item-aboutus">
+            <div className="item-aboutus-img">
+            <div>
             <img src={`https://safe.hbox.at/index.php/apps/files_sharing/publicpreview/PNbxziMMnMmAiB4?x=2560&y=947&a=true&file=tl.png`} align="left" alt="Thomas L" width="148px" height="144px"/>
             </div>
-            <div class="item-aboutus">
+            <div>
             <img src={`https://safe.hbox.at/index.php/apps/files_sharing/publicpreview/sqeCBcedM9XDdsg?x=1920&y=587&a=true&file=dd.png`} align="left" alt="Dominic D" width="145px" height="137px"/>
             </div>
-            <div class="item-aboutus">
+            <div>
             <img src={`https://safe.hbox.at/index.php/apps/files_sharing/publicpreview/74xmTNNxfmXrgif?x=1920&y=587&a=true&file=tg.png`} align="left" alt="Thomas G" width="153px" height="145px"/>
+            </div>
             </div>
             <div className="item-aboutus-text">
                 <ul className="item-aboutus-ul">

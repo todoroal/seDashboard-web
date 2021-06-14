@@ -84,6 +84,7 @@ img {
   flex-wrap: nowrap;
   justify-content: space-evenly;
   align-items: baseline;
+  height: 50vmax;
 }
 
 .item-aboutus{
@@ -102,6 +103,13 @@ img {
   width: 40%;
 }
 
+li.\.item-aboutus-li-bold{
+  font-weight: bold;
+}
+
+li.item-aboutus-li-italic{
+  font-style: italic;
+}
 
 /*Weahter City Text*/
 .weahter-text-minmax{

@@ -14,19 +14,19 @@ import React from 'react'
             </div>
             <div className="item-aboutus-text">
                 <ul className="item-aboutus-ul">
-                    <li className=".item-aboutus-li-bold">Thomas Lerchbaumer</li>
+                    <li className="item-aboutus-li-bold">Thomas Lerchbaumer</li>
                     <li>[Frontend mastermind, Backend general support]</li>
                     <li className="item-aboutus-li-italic">Why JavaDevs wear glasses? Because they don’t C#.</li>
                 </ul>
 
                 <ul className="item-aboutus-ul">
-                    <li className=".item-aboutus-li-bold">Dominic Duda</li>
+                    <li className="item-aboutus-li-bold">Dominic Duda</li>
                     <li>[Main Logic, Backend mastermind]</li>
                     <li className="item-aboutus-li-italic">Why are Assembly programmers always soaking wet? They work below C-level.</li>
                 </ul>
 
                 <ul className="item-aboutus-ul">
-                    <li className=".item-aboutus-li-bold">Thomas Gutjahr</li>
+                    <li className="item-aboutus-li-bold">Thomas Gutjahr</li>
                     <li>[Frontend support, Backend support]</li>
                     <li className="item-aboutus-li-italic">Don't use "beef stew" as a computer password. It's not stroganoff.</li>
                 </ul>

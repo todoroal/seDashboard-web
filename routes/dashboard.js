@@ -85,6 +85,10 @@ router.get('/tempForecast', async (req,res) => {
        });
 });
 
+
+// @route       Get api//tempCurrent
+// @desc        Save users Config on registration
+// @access      Public
 router.get('/tempCurrent', async (req,res) => {
         await getTempValuesOneDay()
         .then(data => {res.json(data)})

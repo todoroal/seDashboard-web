@@ -40,7 +40,7 @@ ul {
 }
 
 img {
-  width: 100%;
+  /*  */
 }
 
 .note-input-wrapper{
@@ -59,9 +59,16 @@ img {
   border: 1px solid var(--dark-color);
   padding: 1%;
   margin-bottom: 1%;
-  
 }
 
+.spinner-placement{
+  margin: 0 auto;
+}
+
+.line-chart-dash{
+  max-height: 100%;
+  width: 70%;
+}
 .spotify-dash {
   display: flex;
   width: 100%;
@@ -78,45 +85,49 @@ img {
 .note-remove{
   float: right;
 }
-.container-aboutus{
+.container-aboutus {
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
-  align-items: stretch;
-  height: 33vmax;
-  align-content: flex-end;
-  flex-wrap: wrap;
+  /* align-content: flex-start; */
+  /* margin: 0 auto; */
+}
+
+.about-us-person {
+  display: flex;
+  /* margin: 3%; */
+  justify-content: flex-start;
+  margin-bottom: 4%;
 }
 
 .item-aboutus{
-  vertical-align: top;
+/*   vertical-align: top;
     display: inline-block;
     text-align: center;
-    width: 120px;
+    width: 120px; */
 }
 
 .item-aboutus-img{
-  display: flex;
+/*   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   align-items: stretch;
   height: 33vmax;
   align-content: flex-end;
-  flex-wrap: wrap;
+  flex-wrap: wrap; */
 }
 
 .item-aboutus-ul{
-  display: block;
+/*   display: block;
   align-items: baseline;
   height: 80%;
   height: 12rem;
   margin-bottom: 10px;
-  width: 40%;
+  width: 40%; */
 }
 
-.item-aboutus-text{
-  padding-top: 6%;
-  padding-left: 5%;
+.item-aboutus-text {
+  display: flex;
+  align-items: center;
 }
 
 li.item-aboutus-li-bold{
@@ -192,6 +203,9 @@ li.item-aboutus-li-italic{
   /* background-color: yellow; */
   min-height: 100%;
   min-width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content:center;
 }
 
 .notes-dash{
@@ -234,6 +248,19 @@ li.item-aboutus-li-italic{
   margin: auto;
   overflow: hidden;
  /*  padding: 4rem 4rem; */
+}
+
+.container-about{
+    /* max-width: 1200px; */
+    /* margin: auto; */
+    /* overflow: hidden; */
+    display: flex;
+    /* justify-content: center; */
+    /* padding: 4rem 4rem; */
+    flex-direction: column;
+   /*  padding: 4rem 4rem; */
+
+
 }
 
 /* Text Styles*/
@@ -690,11 +717,31 @@ Note: Beware of modifying this element as it can break the animations - you shou
   background: rgba(0, 0, 0, 0.3);
 }
 
+.item-aboutus-ul{
+  margin-left:5%;
+}
+
 
 /* Mobile Styles */
 @media (max-width: 700px) {
   .hide-sm {
     display: none;
+  }
+  .container{
+    margin-top:10%;
+    width: 90%;
+  }
+
+  .navbar svg {
+    width: 40%;
+    margin-top: 9%;
+}
+
+  .about-us-person{
+    padding: 2%;
+  }
+  .item-aboutus-ul{
+    margin-left:5%;
   }
 
   .grid-2,

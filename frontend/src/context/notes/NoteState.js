@@ -4,7 +4,6 @@ import NoteContext from './noteContext';
 import NoteReducer from './noteReducer';
 import { ADD_NOTE, GET_NOTES, DELETE_NOTE, CLEAR_CURRENT} from '../types'
 
-
 const NoteState = props =>{
     const initialState ={
         notes: null,

@@ -4,6 +4,7 @@ import GridLayout from 'react-grid-layout';
 import WeatherSmall from '../weather/WeatherSmall';
 import StandardRss from '../standardrss/StandardRss';
 import Notes from '../notes/Notes';
+import WeatherDetail from '../weather/WeatherDetail';
 import AuthContext from '../../context/auth/authContext';
 
 
@@ -14,7 +15,6 @@ import AuthContext from '../../context/auth/authContext';
     useEffect(()=>{
       if(localStorage.token){
           authContext.loadUser();
-
       }
       //eslint-disable-next-line
   }, []);
@@ -31,7 +31,7 @@ import AuthContext from '../../context/auth/authContext';
     <Fragment>
       <GridLayout className="unAuthlayout" layout={unAuthlayout} cols={12} rowHeight={150} heigth={500} width={1200} >
         <div key="weatherLarge">
-          Large
+          <WeatherDetail></WeatherDetail>
         </div>
         <div key="weatherSmall">
           <WeatherSmall></WeatherSmall>
@@ -60,7 +60,7 @@ import AuthContext from '../../context/auth/authContext';
       <Fragment>
       <GridLayout className="layout" layout={authLayout} cols={12}   rowHeight={150} heigth={500} width={1200} >
         <div key="weatherLarge">
-          Large
+          <WeatherDetail></WeatherDetail>
         </div>
         <div key="weatherSmall">
           <WeatherSmall></WeatherSmall>

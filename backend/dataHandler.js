@@ -17,8 +17,9 @@ const getTempValuesOneDay = async () => {
         var pressure = currentTemp.current.pressure
         var minTemp = currentTemp.daily[0].temp.min
         var maxTemp = currentTemp.daily[0].temp.max
+        var icon = currentTemp.current.weather[0].icon
         
-        test = {temp, feelsLike, humidity, pressure, minTemp, maxTemp}
+        test = {temp, feelsLike, humidity, pressure, minTemp, maxTemp, icon}
 
         return(test) 
     } catch (err) {
@@ -33,13 +34,15 @@ const getTempForecastHourlyOneDay = async () => {
         var dt = []
         var temp = []
         var icon = []
-        const forecastTemp = await getTempDataForecast();      
+        const forecastTemp = await getTempDataForecast();  
+        var city = forecastTemp.timezone
+        var cityName = city.substring((city.indexOf("/")+1))
         for(var i = 0; i < 24; i++){
             dt.push(forecastTemp.hourly[i].dt)
             temp.push(forecastTemp.hourly[i].temp)
             icon.push(forecastTemp.hourly[i].weather[0].icon)
         }
-        test = {dt, temp, icon}
+        test = {cityName, dt, temp, icon}
         return(test)
     } catch (err) {
         console.error(err)

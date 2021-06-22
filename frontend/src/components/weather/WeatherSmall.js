@@ -38,7 +38,7 @@ const WeatherSmall = () => {
                     <img className="weather-icon" src={`http://openweathermap.org/img/wn/${icon}@2x.png`} align="left" alt={`${name}`} width="100px" height="100px"/>
                     <p className="weather-text-icon">{temp}°</p> 
                 </div>
-                    <h4>Details <i class="fas fa-bolt"></i></h4>
+                    <h4>Details <i className="fas fa-bolt"></i></h4>
                     <div className="grid-2 grid-smaller">
                         <ul >
                         <li>Feels Like {feelsLike}°</li>

@@ -11,9 +11,16 @@ import NoteContext from '../../context/notes/noteContext';
     const {addNote, current,clearCurrent} = noteContext
 
     useEffect(()=>{
+        if(current !== null){
+            setNote(current);
+        }else{
+       
         setNote({
             noteText: ''
         })
+    
+    }
+
     },[noteContext, current])
 
     const [note, setNote] = useState({
@@ -38,16 +45,16 @@ import NoteContext from '../../context/notes/noteContext';
     }
 
     return (
-        <div className="">
+       <Fragment>
     
        
         <form onSubmit={onSubmit}>
                 <textarea placeholder="*enter your note here...." rows="8" cols="50" name="noteText" value={noteText} onChange={onChange} required></textarea>
-                <div>
-                    <input type="submit" value="Add Note" name="note" className="btn btn-primary"></input>
+                <div className="btn-note">
+                    <input type="submit" value="Add Note" name="note" className="btn btn-note"></input>
                 </div>
         </form>
-        </div>
+        </Fragment>
     )
 }
 

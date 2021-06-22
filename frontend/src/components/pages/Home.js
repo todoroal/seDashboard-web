@@ -6,6 +6,7 @@ import StandardRss from '../standardrss/StandardRss';
 import Notes from '../notes/Notes';
 import WeatherDetail from '../weather/WeatherDetail';
 import AuthContext from '../../context/auth/authContext';
+import NotesForm from '../notes/NotesForm';
 
 
  const Home = () => {
@@ -51,9 +52,10 @@ import AuthContext from '../../context/auth/authContext';
 
   const authLayout = [{i: 'weatherLarge', x: 0, y: 0, w: 8, h: 2, minW: 8}, 
   {i: 'weatherSmall', x: 8, y: 0, w: 4, h: 2, minW: 4, maxW: 4},
-  {i: 'standardRss', x: 8, y: 0, w: 4, h: 2, minW: 4, maxW: 4},
-  {i: 'notes', x: 0, y: 0, w: 8, h: 2, },
-  {i: 'spotify', x: 0, y: 2, w: 4, h: 2, minW: 4, maxH:3},
+  {i: 'notes', x: 0, y: 1, w: 6, h: 2, },
+  {i: 'notes-form', x: 6, y: 1, w: 6, h: 2},
+  {i: 'standardRss', x: 0, y: 2, w: 4, h: 2, minW: 4, maxW: 4},
+  {i: 'spotify', x: 2, y: 2, w: 4, h: 2, minW: 4, maxH:3},
 ]
 
     const authLayoutContet =(
@@ -65,14 +67,21 @@ import AuthContext from '../../context/auth/authContext';
         <div key="weatherSmall">
           <WeatherSmall></WeatherSmall>
         </div>
-        <div key="standardRss">
-          <StandardRss></StandardRss>
-        </div>
+
         <div key="notes" className="notes-wrapper-dash">
           <h2>Your Notes</h2>
           <div className="notes-dash">
           <Notes></Notes>
           </div>
+        </div>
+        <div key="notes-form" className="notes-wrapper-dash">
+          <h2>Add notes</h2>
+        <div className="notes-dash-form">
+          <NotesForm></NotesForm>
+        </div>
+        </div>
+        <div key="standardRss">
+          <StandardRss></StandardRss>
         </div>
         <div key="spotify" className="notes-wrapper-dash">
           <h2>Spotify</h2>

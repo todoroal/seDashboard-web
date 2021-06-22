@@ -9,9 +9,7 @@ import {
 
 const NewsState = props =>{
     const initialState ={
-      headline: [],
-      thumbnail: [],
-      link: [],
+      news: [],
       loading: true
     };
     const [state, dispatch] = useReducer(NewsReducer, initialState);
@@ -34,9 +32,7 @@ const NewsState = props =>{
 
     return(
         <NewsContext.Provider value={{
-            hradline: state.headline,
-            thumbnail: state.thumbnail,
-            link: state.link,
+            news: state.news, 
             loading: state.loading,
             getNews
            }}>

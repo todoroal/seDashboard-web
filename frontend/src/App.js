@@ -29,6 +29,7 @@ import AlertState from'./context/alert/AlertState';
 import WeatherState from './context/weather/WeatherState';
 import NoteState from './context/notes/NoteState';
 import WeatherForecastState from './context/weatherForecast/WeatherForecastState';
+import NewsState from './context/news/NewsState';
 
 if(localStorage.token){
   setAuthToken(localStorage.token);
@@ -46,6 +47,7 @@ const App = () =>  {
     <ThemeProvider theme={theme === 'light' ? lightTheme : darkTheme}>
       <GlobalStyles/>
           <NoteState>
+            <NewsState>
             <WeatherState>
               <WeatherForecastState>
               <Router>
@@ -71,6 +73,7 @@ const App = () =>  {
               </Router>
               </WeatherForecastState>
               </WeatherState>
+            </NewsState>
           </NoteState>
     </ThemeProvider>
     </AuthState>

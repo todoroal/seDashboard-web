@@ -51,18 +51,16 @@ const getTempForecastHourlyOneDay = async () => {
 
 const getStandardRSSFeed = async () => {
     try {
-        var test = {}
-        var headline = []
-        var thumbnail = []
-        var link = []
+        var news = []
         const rssFeed = await getStandardFeed();
         for(var i = 0; i < rssFeed.items.length; i++){
-            headline.push(rssFeed.items[i].title)
-            thumbnail.push(rssFeed.items[i].thumbnail)
-            link.push(rssFeed.items[i].link)
-        }
-        test = {headline, thumbnail, link}
-        return(test)
+            var json = { "title": rssFeed.items[i].title,
+                         "thumbnail": rssFeed.items[i].thumbnail,
+                         "link": rssFeed.items[i].link }
+            news.push(json) 
+        }     
+        
+        return(news)
     } catch (err) {
         console.error(err)
     }

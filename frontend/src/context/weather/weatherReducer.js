@@ -1,7 +1,5 @@
 import {
-    SEARCH_WEATHER,
     GET_WEATHER,
-    GET_HOURLY_WEATHER
 } from '../types'
 
 

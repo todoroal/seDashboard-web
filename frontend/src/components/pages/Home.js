@@ -55,7 +55,7 @@ import NotesForm from '../notes/NotesForm';
   {i: 'notes', x: 0, y: 1, w: 6, h: 2, },
   {i: 'notes-form', x: 6, y: 1, w: 6, h: 2},
   {i: 'standardRss', x: 0, y: 2, w: 4, h: 2, minW: 4, maxW: 4},
-  {i: 'spotify', x: 2, y: 2, w: 4, h: 2, minW: 4, maxH:3},
+  {i: 'spotify', x: 4, y: 2, w: 4, h: 2, minW: 4, maxH:3},
 ]
 
     const authLayoutContet =(

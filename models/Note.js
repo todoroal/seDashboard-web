@@ -5,10 +5,14 @@ const NotesSchema = mongoose.Schema({
     type: mongoose.Schema.Types.ObjectId,
     ref: 'users'
   },
-  note: {
+  noteText: {
     type: String,
     required: true
   },
+  date: {
+    type: Date,
+    default: Date.now
+  }
 });
 
-module.exports = mongoose.model('notes', NotesSchema);
+module.exports = mongoose.model('note', NotesSchema);

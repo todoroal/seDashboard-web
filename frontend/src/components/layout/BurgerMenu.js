@@ -3,8 +3,7 @@ import PropTypes from 'prop-types';
 import {Link} from 'react-router-dom'
 import { slide as Menu } from 'react-burger-menu'
 import AuthContext from '../../context/auth/authContext'
-import {ReactComponent as MainLogo} from "../../res/img/se_logo.svg";
-import NoteContext from '../../context/notes/noteContext';
+
 
  const BurgerMenu = ({title, icon}) => {
     const authContext = useContext(AuthContext);
@@ -89,7 +88,7 @@ BurgerMenu.propTypes ={
 }
 
 BurgerMenu.defaultProps = {
-    title: 'Contact Keeper',
+    title: 'seDashboard',
     icon: 'fas fa-id-card-alt'
 }
 

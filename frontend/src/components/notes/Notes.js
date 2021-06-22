@@ -1,7 +1,6 @@
 import React ,{Fragment, useContext, useEffect} from 'react'
 import {CSSTransition, TransitionGroup} from 'react-transition-group'
 import NoteItem from './NoteItem';
-import Spinner from '../layout/Spinner';
 
 import NoteContext from '../../context/notes/noteContext';
 
@@ -32,7 +31,7 @@ import NoteContext from '../../context/notes/noteContext';
              timeout={500}
              classNames='item'
              >
-             <NoteItem noteInfo={note}></NoteItem>
+             <NoteItem note={note}></NoteItem>
              </CSSTransition>
           )        
         )} 

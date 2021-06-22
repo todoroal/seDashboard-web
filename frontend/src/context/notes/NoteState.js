@@ -2,7 +2,7 @@ import React, { useContext, useEffect, Fragment,useReducer } from 'react'
 import axios from 'axios';
 import NoteContext from './noteContext';
 import NoteReducer from './noteReducer';
-import { ADD_NOTE, GET_NOTES, DELETE_NOTE, CLEAR_CURRENT} from '../types'
+import { ADD_NOTE, GET_NOTES, DELETE_NOTE, CLEAR_CURRENT, SET_CURRENT} from '../types'
 
 const NoteState = props =>{
     const initialState ={
@@ -16,6 +16,7 @@ const NoteState = props =>{
     const getNotes = async () =>{
         try {
             const res = await axios.get('/api/notes');
+            console.log(res.data)
             dispatch({
                 type: GET_NOTES,
                 payload: res.data
@@ -60,6 +61,13 @@ const NoteState = props =>{
            }
     }
 
+    //Set Current note (needed for edit)
+
+    const setCurrent = (note) => {
+        dispatch({ type: SET_CURRENT, payload: note });
+    };
+
+
     const clearCurrent = () =>{
         dispatch({type: CLEAR_CURRENT})
     }
@@ -72,7 +80,8 @@ const NoteState = props =>{
             getNotes,
             addNote,
             deleteNote,
-            clearCurrent
+            clearCurrent,
+            setCurrent
            }}>
             {props.children}
 

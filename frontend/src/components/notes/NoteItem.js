@@ -9,8 +9,9 @@ import PropType from 'prop-types';
 const NoteItem = (propNote) => {
     const noteContext = useContext(NoteContext)
 
-    const data = propNote.note;
-
+    const {setCurrent} = noteContext;
+    const data = propNote.noteInfo;
+    console.log(data)
     const onDelete = () =>{
         noteContext.deleteNote(data._id);
     }
@@ -22,8 +23,15 @@ const NoteItem = (propNote) => {
                 <div className="note-text">
                     <p>{data.note}</p>
                 </div>
+               
+                   
                 <div className="note-remove">
-                    <button class="btn badge badge-dark" onClick={onDelete}>x</button>
+                    <button className="btn badge badge-dark">
+                        <i class="fas fa-pen"></i>
+                    </button>
+                    <button class="btn badge badge-dark" onClick={onDelete}>
+                        <i class="fas fa-times"></i>
+                    </button>
                 </div>
         </div>
     )

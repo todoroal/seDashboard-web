@@ -32,7 +32,7 @@ import NoteContext from '../../context/notes/noteContext';
              timeout={500}
              classNames='item'
              >
-             <NoteItem note={note}></NoteItem>
+             <NoteItem noteInfo={note}></NoteItem>
              </CSSTransition>
           )        
         )} 

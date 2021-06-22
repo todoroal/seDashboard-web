@@ -3,16 +3,17 @@ import {
     CLEAR_CURRENT,
     DELETE_NOTE,
     GET_NOTES,
+    SET_CURRENT
   } from '../types';
   
 
   export default (state, action) => {
     switch (action.type) {
         case GET_NOTES:
-            return{
-                ...state,
-                notes: action.payload
-            }
+          return{
+              ...state,
+              notes: action.payload
+          }
           case ADD_NOTE:
             return{
               ...state,
@@ -29,6 +30,11 @@ import {
             return{
               ...state,
               current: null
+            }
+          case SET_CURRENT:
+            return{
+              ...state,
+              current: action.payload
             }
       default:
         return state;

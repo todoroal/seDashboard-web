@@ -17,7 +17,7 @@ const NewsState = props =>{
     const getNews = async () =>{
       try {
         const res = await axios.get('/api/dashboard/standardFeed');
-        console.log(res, 'res hourly')
+
         dispatch({
             type: GET_NEWS,
             payload: res.data

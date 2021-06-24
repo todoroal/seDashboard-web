@@ -1,10 +1,9 @@
-import React, { useContext, useEffect, Fragment,useReducer } from 'react'
+import React, {useReducer } from 'react'
 import axios from 'axios';
 import WeatherContext from './weatherContext';
 import WeatherReducer from './weatherReducer';
 import {
     GET_WEATHER,
-    GET_HOURLY_WEATHER
 } from '../types'
 
 
@@ -18,7 +17,6 @@ const WeatherState = props =>{
     const getWeather = async () =>{
         try {
           const res = await axios.get('/api/dashboard/tempCurrent');
-          console.log(res,'get weather');
           dispatch({
               type: GET_WEATHER,
               payload: res.data

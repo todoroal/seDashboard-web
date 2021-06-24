@@ -17,7 +17,7 @@ const WeatherForecastState = props =>{
     const getHourlyForecast = async () =>{
       try {
         const res = await axios.get('/api/dashboard/tempForecast');
-        console.log(res, 'res hourly')
+
         dispatch({
             type: GET_HOURLY_WEATHER,
             payload: res.data

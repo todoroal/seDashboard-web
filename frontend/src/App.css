@@ -173,6 +173,7 @@ li.item-aboutus-li-italic{
   display: flex;
   margin-bottom: 2%;
   width: 98%;
+  padding:1%;
 }
 .li-newsroom-img{
   padding-bottom: -5rem;
@@ -181,6 +182,7 @@ li.item-aboutus-li-italic{
   align-content: center;
   width: 60%;
   margin-left:4%;
+  max-width: 40%;
 }
 /*weather Icon*/
 .weather-icon{
@@ -578,6 +580,7 @@ table th {
   bottom: 0;
   right: 0;
   margin: 1%;
+  z-index: 1;
 
 }
 
@@ -744,10 +747,28 @@ Note: Beware of modifying this element as it can break the animations - you shou
 }
 
 
+@media (max-width: 1000px){
+  .container{
+    margin-top: 2%;
+  }
+
+  .navbar svg {
+    width: 20%;
+}
+
+.bm-burger-bars {
+  background: #333;
+}
+
+.line-chart-dash{
+  max-width: 60%;
+}
+
+}
 
 
 /* Mobile Styles */
-@media (max-width: 700px) {
+@media (max-width: 770px) {
   .hide-sm {
     display: none;
   }
@@ -760,6 +781,11 @@ Note: Beware of modifying this element as it can break the animations - you shou
     width: 40%;
     margin-top: 9%;
 }
+
+  .line-chart-dash{
+    width: 100%;
+    max-width: 90%;
+  }
 
   .about-us-person{
     padding: 2%;
@@ -775,6 +801,7 @@ Note: Beware of modifying this element as it can break the animations - you shou
   .grid-3,
   .grid-4 {
     grid-template-columns: 1fr;
+    display: flex;
   }
 
   /* Text Styles */

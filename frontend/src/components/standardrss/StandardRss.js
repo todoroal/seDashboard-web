@@ -10,8 +10,6 @@ const StandardRss = () => {
         // eslint-disable-next-line
     },[]); 
 
-    console.log(news, "news")
-
  return (
     <Fragment>
       <div className="container-dash-rss">

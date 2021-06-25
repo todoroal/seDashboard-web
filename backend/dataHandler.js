@@ -1,11 +1,11 @@
 const axios = require('axios');
 
-var { getTempDataForecast, 
-      getTempCurrentData, 
-      getC19Data, 
-      getStandardFeed, 
-      getArnieQuote
-    } = require('./APIHandler');
+var { getTempDataForecast,
+    getTempCurrentData,
+    getC19Data,
+    getStandardFeed,
+    getArnieQuote
+} = require('./APIHandler');
 
 const getTempValuesOneDay = async () => {
     try {
@@ -18,10 +18,10 @@ const getTempValuesOneDay = async () => {
         var minTemp = currentTemp.daily[0].temp.min
         var maxTemp = currentTemp.daily[0].temp.max
         var icon = currentTemp.current.weather[0].icon
-        
-        test = {temp, feelsLike, humidity, pressure, minTemp, maxTemp, icon}
 
-        return(test) 
+        test = { temp, feelsLike, humidity, pressure, minTemp, maxTemp, icon }
+
+        return (test)
     } catch (err) {
         console.error(err);
     }
@@ -34,13 +34,13 @@ const getTempForecastHourlyOneDay = async () => {
         var dt = []
         var temp = []
         var icon = []
-        const forecastTemp = await getTempDataForecast();  
+        const forecastTemp = await getTempDataForecast();
         var city = forecastTemp.timezone
-        var cityName = city.substring((city.indexOf("/")+1))
-        for(var i = 0; i < 24; i++){
+        var cityName = city.substring((city.indexOf("/") + 1))
+        for (var i = 0; i < 24; i++) {
 
-            let time = new Date(forecastTemp.hourly[i].dt*1000).getHours()
-            if(time < 10){
+            let time = new Date(forecastTemp.hourly[i].dt * 1000).getHours()
+            if (time < 10) {
                 time = "0" + time;
             }
             time = time + ':00'
@@ -48,8 +48,8 @@ const getTempForecastHourlyOneDay = async () => {
             temp.push(forecastTemp.hourly[i].temp)
             icon.push(forecastTemp.hourly[i].weather[0].icon)
         }
-        test = {cityName, dt, temp, icon}
-        return(test)
+        test = { cityName, dt, temp, icon }
+        return (test)
     } catch (err) {
         console.error(err)
     }
@@ -59,14 +59,16 @@ const getStandardRSSFeed = async () => {
     try {
         var news = []
         const rssFeed = await getStandardFeed();
-        for(var i = 0; i < rssFeed.items.length; i++){
-            var json = { "title": rssFeed.items[i].title,
-                         "thumbnail": rssFeed.items[i].thumbnail,
-                         "link": rssFeed.items[i].link }
-            news.push(json) 
-        }     
-        
-        return(news)
+        for (var i = 0; i < rssFeed.items.length; i++) {
+            var json = {
+                "title": rssFeed.items[i].title,
+                "thumbnail": rssFeed.items[i].thumbnail,
+                "link": rssFeed.items[i].link
+            }
+            news.push(json)
+        }
+
+        return (news)
     } catch (err) {
         console.error(err)
     }
@@ -79,8 +81,8 @@ const getOneArnieQuote = async () => {
         var quote = greatQuote.quote
         var movie = greatQuote.movie
 
-        test = {quote, movie}
-        return(test)
+        test = { quote, movie }
+        return (test)
     } catch (err) {
         console.error(err)
     }
@@ -91,29 +93,29 @@ const getC19DataAustria = async () => {
         var test = {}
         const covidData = await getC19Data();
         var count = covidData.length
-        var dataString = JSON.stringify(covidData[count-1])
-        var subString = dataString.substring(dataString.indexOf(":")+1)
+        var dataString = JSON.stringify(covidData[count - 1])
+        var subString = dataString.substring(dataString.indexOf(":") + 1)
         var dataArray = subString.split(';')
 
-        const dataDayBefore = JSON.stringify(covidData[count-11]);
-        subString = dataDayBefore.substring(dataString.indexOf(":")+1);
+        const dataDayBefore = JSON.stringify(covidData[count - 11]);
+        subString = dataDayBefore.substring(dataString.indexOf(":") + 1);
         const dataArrBefore = subString.split(';');
         //hacky dirty quick solution please never ever do this
         test = {
-            confCases : (dataArray[3] +1 -1).toLocaleString('de-DE'),
-            deaths : (dataArray[4]+1-1).toLocaleString('de-DE'),
-            recovered : (dataArray [5]+1-1).toLocaleString('de-DE'),
-            activeCases:  (dataArray[3] - dataArray [5] - dataArray[4]).toLocaleString('de-DE'),
-            newCases:  (dataArray[3] -  dataArrBefore[3]).toLocaleString('de-DE')
+            confCases: (dataArray[3] + 1 - 1).toLocaleString('de-DE'),
+            deaths: (dataArray[4] + 1 - 1).toLocaleString('de-DE'),
+            recovered: (dataArray[5] + 1 - 1).toLocaleString('de-DE'),
+            activeCases: (dataArray[3] - dataArray[5] - dataArray[4]).toLocaleString('de-DE'),
+            newCases: (dataArray[3] - dataArrBefore[3]).toLocaleString('de-DE')
         }
-        return(test)
+        return (test)
         //console.log(result)
     } catch (err) {
         console.error(err)
     }
 }
 
-module.exports={
+module.exports = {
     getTempValuesOneDay,
     getTempForecastHourlyOneDay,
     getStandardRSSFeed,

@@ -20,8 +20,8 @@ import { css } from "@emotion/react";
     const unAuthlayout =[
     {i: 'weatherLarge', x: 0, y: 0, w: 6, h: 2, minW: 6}, 
     {i: 'weatherSmall', x: 8, y: 0, w: 4, h: 2, minW: 4, maxW: 4},
-    {i: 'standardRss', x: 0, y: 1, w: 3, h: 2, minW: 4, maxW: 4},
-    {i: 'spotify', x: 3, y: 1, w: 3, h: 2, minW: 4, maxH:3},
+    {i: 'standardRss', x: 0, y: 1, w: 3, h: 2, minW: 3, maxW: 4},
+    {i: 'spotify', x: 3, y: 1, w: 3, h: 2, minW: 3, maxH:3},
     {i: 'quote', x: 6, y: 2, w: 4, h: 2, minW: 4, maxH:3},
     ]
 
@@ -30,12 +30,12 @@ import { css } from "@emotion/react";
     {i: 'weatherSmall', x: 8, y: 0, w: 4, h: 2, minW: 4, maxW: 4},
     {i: 'notes', x: 0, y: 1, w: 5, h: 2, },
     {i: 'notes-form', x: 6, y: 1, w: 5, h: 2},
-    {i: 'standardRss', x: 0, y: 2, w: 3, h: 2, minW: 4, maxW: 4},
-    {i: 'spotify', x: 3, y: 2, w: 3, h: 2, minW: 4, maxH:3},
+    {i: 'standardRss', x: 0, y: 2, w: 3, h: 2, minW: 3},
+    {i: 'spotify', x: 3, y: 2, w: 3, h: 2, minW: 3, maxH:3},
     {i: 'quote', x: 6, y: 2, w: 4, h: 2, minW: 4, maxH:3},
   ]
 
-  const unAuthlayoutMD =[
+/*   const unAuthlayoutMD =[
   {i: 'weatherLarge', x: 0, y: 0, w: 4, h: 2, minW: 8}, 
   {i: 'weatherSmall', x: 4, y: 0, w: 2, h: 2, minW: 1, maxW: 4},
   {i: 'standardRss', x: 0, y: 1, w: 2, h: 2, minW: 1, maxW: 4},
@@ -50,7 +50,7 @@ import { css } from "@emotion/react";
   {i: 'standardRss', x: 0, y: 2, w: 2, h: 2, minW: 2, maxW: 4},
   {i: 'spotify', x: 2, y: 2, w: 2, h: 2, minW: 2, maxH:3},
   {i: 'quote', x: 4, y: 2, w: 2, h: 2, minW: 2, maxH:3},
-]
+] */
 
   const [authLay, setAuthLay] = useState({
     mounted:false,

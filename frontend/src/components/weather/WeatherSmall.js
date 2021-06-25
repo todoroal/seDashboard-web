@@ -39,7 +39,7 @@ const WeatherSmall = () => {
                     <p className="weather-text-icon">{temp}°</p> 
                 </div>
                     <h4>Details <i className="fas fa-bolt"></i></h4>
-                    <div className="grid-2 grid-smaller">
+                    <div className="grid-3 grid-smaller">
                         <ul >
                         <li>Feels Like {feelsLike}°</li>
                         <li>Wind {wind} m/s</li>

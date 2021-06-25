@@ -26,16 +26,10 @@ const WeatherDetail = () => {
     
    let [color, setColor] = useState("#ffffff");
     //dt --> change Unix time stamp 
-    if(!loading){
-      hours = dt.map(time =>{
-       const res = new Date(time*1000).getHours()
-       return res;
-      });
-    }
-    
+
 
     const data = {
-        labels: hours,
+        labels: dt,
         datasets: [
           {
             label: '24h temprature forecast',

@@ -38,7 +38,13 @@ const getTempForecastHourlyOneDay = async () => {
         var city = forecastTemp.timezone
         var cityName = city.substring((city.indexOf("/")+1))
         for(var i = 0; i < 24; i++){
-            dt.push(forecastTemp.hourly[i].dt)
+
+            let time = new Date(forecastTemp.hourly[i].dt*1000).getHours()
+            if(time < 10){
+                time = "0" + time;
+            }
+            time = time + ':00'
+            dt.push(time)
             temp.push(forecastTemp.hourly[i].temp)
             icon.push(forecastTemp.hourly[i].weather[0].icon)
         }

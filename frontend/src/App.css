@@ -250,7 +250,8 @@ li.item-aboutus-li-italic{
   max-height: 70%;
   -ms-overflow-style: none;  /* IE and Edge */
   scrollbar-width: none;  /* Firefox */
-  overflow-x:hidden
+  overflow-x:hidden;
+  display: flex;
 }
 .container-dash-rss h2{
   margin-bottom: 1rem;

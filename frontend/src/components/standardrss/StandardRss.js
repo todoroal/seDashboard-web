@@ -14,8 +14,7 @@ const StandardRss = () => {
  return (
     <Fragment>
       <div className="container-dash-rss">
-        <h2>derStandard Newsroom</h2>
-        <div className="image-wrapper">
+ 
         <ul className="ul-newsroom-scroolbar">
         {news.map(item =>{
           return(
@@ -26,7 +25,7 @@ const StandardRss = () => {
             )            
         })}
         </ul>          
-        </div>       
+       
       </div>
     </Fragment>
 

@@ -15,8 +15,6 @@ const WeatherDetail = () => {
         // eslint-disable-next-line
     },[]); 
 
-    let hours = [];
-
 
     const override = css`
         display: block;

@@ -11,6 +11,7 @@ import { Responsive, WidthProvider } from 'react-grid-layout';
 import useForceUpdate from 'use-force-update';
 import BeatLoader from "react-spinners/BeatLoader";
 import { css } from "@emotion/react";
+import Covid from '../covid/Covid';
 
  const Home = () => {
     const authContext = useContext(AuthContext);
@@ -23,6 +24,8 @@ import { css } from "@emotion/react";
     {i: 'standardRss', x: 0, y: 1, w: 3, h: 2, minW: 3, maxW: 4},
     {i: 'spotify', x: 3, y: 1, w: 3, h: 2, minW: 3, maxH:3},
     {i: 'quote', x: 6, y: 2, w: 4, h: 2, minW: 4, maxH:3},
+    {i: 'corona', x: 0, y: 3, w: 10, h: 1.5, minW: 10, maxH:2, maxW: 10},
+
     ]
 
     const authLayout = [
@@ -33,6 +36,7 @@ import { css } from "@emotion/react";
     {i: 'standardRss', x: 0, y: 2, w: 3, h: 2, minW: 3},
     {i: 'spotify', x: 3, y: 2, w: 3, h: 2, minW: 3, maxH:3},
     {i: 'quote', x: 6, y: 2, w: 4, h: 2, minW: 4, maxH:3},
+    {i: 'corona', x: 0, y: 3, w: 12, h: 2, minW: 12, maxH:2},
   ]
 
 /*   const unAuthlayoutMD =[
@@ -124,6 +128,7 @@ import { css } from "@emotion/react";
                 <WeatherSmall></WeatherSmall>
               </div>
               <div key="standardRss">
+              <h2>derStandard Newsroom</h2>
                 <StandardRss></StandardRss>
               </div>
               <div key="spotify" className="notes-wrapper-dash">
@@ -132,10 +137,16 @@ import { css } from "@emotion/react";
                 <iframe src="https://open.spotify.com/embed/playlist/2h30YpCYHNGqPfxktve6nh" width="90%" height="80%" frameBorder="0" allowtransparency="true" allow="encrypted-media"></iframe>
                 </div>
               </div>
-              <div key="quote" className="notes-wrapper-dash">
+              <div key="quote" className="wrapper-dash">
                 <h2>Quote</h2>
                 <div className="spotify-dash">
                 hii
+                </div>
+              </div>
+              <div key="corona" className="wrapper-dash">
+                <h2>Covid 19 Data</h2>
+                <div className="covid-wrapper">
+                <Covid></Covid>
                 </div>
               </div>
             </ResponsiveReactGridLayout>
@@ -152,7 +163,6 @@ import { css } from "@emotion/react";
       <BeatLoader color={color}  css={override} size={20}></BeatLoader>
       </div>
       ):(
-
         <ResponsiveReactGridLayout className="unAuthlayout" layouts={authLay.layouts}  rowHeight={150} heigth={500} width={1200}
             breakpoints={{lg: 1900, md: 996, sm: 768, xs: 480, xxs: 0}}
             cols={{lg: 12, md: 10, sm: 6, xs: 4, xxs: 2}}
@@ -177,6 +187,7 @@ import { css } from "@emotion/react";
         </div>
         </div>
         <div key="standardRss">
+        <h2>derStandard Newsroom</h2>
           <StandardRss></StandardRss>
         </div>
         <div key="spotify" className="notes-wrapper-dash">
@@ -190,6 +201,12 @@ import { css } from "@emotion/react";
           <div className="spotify-dash">
           hii
           </div>
+        </div>
+        <div key="corona" className="wrapper-dash">
+                <h2>Covid 19 Data</h2>
+                <div className="covid-wrapper">
+                <Covid></Covid>
+                </div>
         </div>
       </ResponsiveReactGridLayout>
 

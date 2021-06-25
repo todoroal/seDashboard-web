@@ -94,12 +94,17 @@ const getC19DataAustria = async () => {
         var dataString = JSON.stringify(covidData[count-1])
         var subString = dataString.substring(dataString.indexOf(":")+1)
         var dataArray = subString.split(';')
-        console.log(dataArray)
 
+        const dataDayBefore = JSON.stringify(covidData[count-11]);
+        subString = dataDayBefore.substring(dataString.indexOf(":")+1);
+        const dataArrBefore = subString.split(';');
+        //hacky dirty quick solution please never ever do this
         test = {
-            confCases : dataArray[3],
-            deaths : dataArray[4],
-            recovered : dataArray [5]
+            confCases : (dataArray[3] +1 -1).toLocaleString('de-DE'),
+            deaths : (dataArray[4]+1-1).toLocaleString('de-DE'),
+            recovered : (dataArray [5]+1-1).toLocaleString('de-DE'),
+            activeCases:  (dataArray[3] - dataArray [5] - dataArray[4]).toLocaleString('de-DE'),
+            newCases:  (dataArray[3] -  dataArrBefore[3]).toLocaleString('de-DE')
         }
         return(test)
         //console.log(result)

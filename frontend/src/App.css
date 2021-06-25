@@ -51,6 +51,10 @@ img {
   min-width: 50%;
 }
 
+.notes-page-wrapper{
+  width: 100%;
+}
+
 .note-wrapper{
   display: flex;
   height: auto;
@@ -72,7 +76,7 @@ img {
 .spotify-dash {
   display: flex;
   width: 100%;
-  height: 100%;
+  height: 90%;
   /* align-items: baseline; */
   justify-content: space-around;
 }
@@ -202,7 +206,7 @@ li.item-aboutus-li-italic{
 
 /*weather*/
 .container-dash{
-  padding: 1vw;
+
   /* background-color: yellow; */
   min-height: 100%;
   min-width: 100%;
@@ -222,14 +226,9 @@ li.item-aboutus-li-italic{
   display: none;
 }
 
-.notes-wrapper-dash h2{
-  margin-top: 1rem;
-}
-
 .container-dash-rss{
   overflow: scroll;
-  max-height: 90%;
-  min-height: 100%;
+  max-height: 70%;
   -ms-overflow-style: none;  /* IE and Edge */
   scrollbar-width: none;  /* Firefox */
 }
@@ -351,6 +350,11 @@ li.item-aboutus-li-italic{
   background: orange;
 }
 
+.react-grid-item h2{
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
 .react-grid-layout{
   height: 100%;
 }
@@ -380,11 +384,46 @@ li.item-aboutus-li-italic{
   margin: 3rem 0;
 }
 
+
+.grid-covid{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 1%;
+  margin-bottom: 2%;
+}
+.grid-covid i{
+  font-size: 2em;
+}
+
+.covid-wrapper {
+  height: 70%;
+  display: flex;
+  justify-content: space-around;
+  align-content: space-between;
+  flex-direction: column;
+}
+
+.container-covid {
+  display: flex;
+  /* margin-top: 5%; */
+  flex-wrap: nowrap;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  text-align: center;
+}
+.break-covid{
+  flex-basis: 100%;
+  height: 1.5vw;
+}
 /* Grid */
 .grid-2 {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 2rem;
+  margin: 0 auto;
+  
 }
 
 .grid-3 {
@@ -747,13 +786,17 @@ Note: Beware of modifying this element as it can break the animations - you shou
 }
 
 
-@media (max-width: 1000px){
+@media (max-width: 1100px){
   .container{
     margin-top: 2%;
   }
 
   .navbar svg {
     width: 20%;
+}
+
+.grid-weather{
+  width: 100%;
 }
 
 .bm-burger-bars {
@@ -775,6 +818,9 @@ Note: Beware of modifying this element as it can break the animations - you shou
   .container{
     margin-top:10%;
     width: 90%;
+  }
+  .container-covid{
+    font-size: 0.9em;
   }
 
   .navbar svg {
@@ -801,7 +847,8 @@ Note: Beware of modifying this element as it can break the animations - you shou
   .grid-4 {
     grid-template-columns: 1fr;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: wrap;
   }
 
   .grid-3{

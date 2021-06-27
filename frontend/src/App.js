@@ -31,6 +31,7 @@ import NoteState from './context/notes/NoteState';
 import WeatherForecastState from './context/weatherForecast/WeatherForecastState';
 import NewsState from './context/news/NewsState';
 import CovidState from './context/covid/CovidState';
+import QuotesState from './context/quotes/QuotesState';
 
 if (localStorage.token) {
   setAuthToken(localStorage.token);
@@ -52,26 +53,28 @@ const App = () => {
             <WeatherState>
               <WeatherForecastState>
                 <CovidState>
-                  <Router>
-                    <AlertState>
-                      <Fragment>
-                        <div className="btn switch-theme btn-dark" onClick={themeToggler}> Switch Theme</div>
-                        <BurgerMenu></BurgerMenu>
-                        <Header themeSelected={theme}>
-                        </Header>
-                        <div className="container">
-                          <Alert></Alert>
-                          <Switch>
-                            <Route exact path='/' component={Home}></Route>
-                            <Route exact path='/about' component={About}></Route>
-                            <PrivateRoute exact path='/notes' component={NotesPage}></PrivateRoute>
-                            <Route exact path='/login' component={Login}></Route>
-                            <Route exact path='/register' component={Register}></Route>
-                          </Switch>
-                        </div>
-                      </Fragment>
-                    </AlertState>
-                  </Router>
+                  <QuotesState>
+                    <Router>
+                      <AlertState>
+                        <Fragment>
+                          <div className="btn switch-theme btn-dark" onClick={themeToggler}> Switch Theme</div>
+                          <BurgerMenu></BurgerMenu>
+                          <Header themeSelected={theme}>
+                          </Header>
+                          <div className="container">
+                            <Alert></Alert>
+                            <Switch>
+                              <Route exact path='/' component={Home}></Route>
+                              <Route exact path='/about' component={About}></Route>
+                              <PrivateRoute exact path='/notes' component={NotesPage}></PrivateRoute>
+                              <Route exact path='/login' component={Login}></Route>
+                              <Route exact path='/register' component={Register}></Route>
+                            </Switch>
+                          </div>
+                        </Fragment>
+                      </AlertState>
+                    </Router>
+                  </QuotesState>
                 </CovidState>
               </WeatherForecastState>
             </WeatherState>

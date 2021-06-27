@@ -9,14 +9,14 @@ import {
 
 const QuotesState = props => {
   const initialState = {
-    news: [],
+    quotes: [],
     loading: true
   };
   const [state, dispatch] = useReducer(QuotesReducer, initialState);
 
 
 
-  const getNews = async () => {
+  const getQuotes = async () => {
     try {
       const res = await axios.get('/api/dashboard/arnieQuote');
 
@@ -36,7 +36,7 @@ const QuotesState = props => {
     <QuotesContext.Provider value={{
       quotes: state.quotes,
       loading: state.loading,
-      getNews
+      getQuotes
     }}>
       {props.children}
 
@@ -45,4 +45,4 @@ const QuotesState = props => {
 
 }
 
-export default NewsState;
+export default QuotesState;

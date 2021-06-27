@@ -9,7 +9,7 @@ export default (state, action) => {
             return {
                 ...state,
                 quotes: action.payload,
-                loading: action.payload.length > 0 ? false : true
+                loading: false
             }
         default:
             return state;

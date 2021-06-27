@@ -12,6 +12,7 @@ import useForceUpdate from 'use-force-update';
 import BeatLoader from "react-spinners/BeatLoader";
 import { css } from "@emotion/react";
 import Covid from '../covid/Covid';
+import Quotes from '../quotes/Quotes';
 
 const Home = () => {
   const authContext = useContext(AuthContext);
@@ -149,7 +150,7 @@ const Home = () => {
           <div key="quote" className="wrapper-dash">
             <h2>Quote</h2>
             <div className="spotify-dash">
-              hii
+              <Quotes></Quotes>
             </div>
           </div>
           <div key="corona" className="wrapper-dash">
@@ -210,7 +211,7 @@ const Home = () => {
           <div key="quote" className="notes-wrapper-dash">
             <h2>Quote</h2>
             <div className="spotify-dash">
-              hii
+              <Quotes></Quotes>
             </div>
           </div>
           <div key="corona" className="wrapper-dash">
